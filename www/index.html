@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="" />
+    <script src=""></script>
+    <style>
+    body{
+        background: #7b00b4;
+    }
+
+    .main {
+        background: url('imgs/img.png') no-repeat -1150px -2px;
+        width: 771px;
+        height: 507px;
+        margin:auto;
+        position: relative;
+        text-align: center;
+    }
+    .xiu {
+        background: url('imgs/img.png') no-repeat -343px -867px;
+        width: 130px;
+        height: 74px;
+        position: absolute;
+        left: 98px;
+        top: 190px;
+        animation: zoomout 0.2s ease-in-out infinite alternate;
+    }
+    .tai {
+        background: url('imgs/img.png') no-repeat -1290px -870px;
+        width: 108px;
+        height: 68px;
+        position: absolute;
+        right: 98px;
+        top: 190px;
+        animation: zoomout 0.2s ease-in-out infinite alternate;
+    }
+    .user {
+        background: url('imgs/img.png') no-repeat -1970px -416px;
+        width: 26px;
+        height: 34px;
+        position: absolute;
+        right: 200px;
+        top: 380px;
+    }
+    .dragon {
+        background: url('imgs/img.png') no-repeat -1538px -514px;
+        width: 317px;
+        height: 309px;
+        position: absolute;
+        left: 230px;
+        top: 130px;
+        animation: spin 5s linear infinite;
+    }
+    .input{
+        width: 200px;
+        height: 60px;
+        border-radius: 50px;
+        position: absolute;
+        left: 45px;
+        top: 305px;
+        outline: 0;
+        text-align: center;
+        font-size: 30px;
+        background: 0;
+        border: 0;
+        color : #fff;
+    }
+
+    .txt{
+        padding-top: 410px;
+        text-align: center;
+        top: 300px;
+    }
+    .statustxt{
+        font-size: 25px;
+        font-weight: bold;
+        font-family: "Segoe UI";
+        top: 500px;
+        text-shadow: 0 0 3px #000;
+        color: yellow;
+        transition: 0.5s;
+        opacity: 0;
+    }
+    .usertxt{
+        font-size: 25px;
+        font-weight: bold;
+        font-family: "Segoe UI";
+        top: 500px;
+        text-shadow: 0 0 3px #000;
+        color: white;
+    }
+    .dice{
+        position: absolute;
+    }
+    .dice1{
+        background: url('imgs/dice.png') no-repeat -507px -2px;
+        width: 98px;
+        height: 96px;
+        transform: scale(0.8) rotate(-20deg);
+        left: 340px;
+        top: 200px;
+        opacity: 0;
+    }
+    .dice2{
+        background: url('imgs/dice.png') no-repeat -404px -3px;
+        width: 98px;
+        height: 96px;
+        transform: scale(0.8) rotate(20deg);
+        left: 300px;
+        top: 270px;
+        opacity: 0;
+    }
+    .dice3{
+        background: url('imgs/dice.png') no-repeat 0 -2px;
+        width: 98px;
+        height: 96px;
+        transform: scale(0.8) rotate(10deg);
+        left: 380px;
+        top: 270px;
+        opacity: 0;
+    }
+    .khung {
+        background: url('imgs/img.png') no-repeat -1107px -828px;
+        width: 179px;
+        height: 45px;
+        transform: scale(0.6);
+        position: absolute;
+        left: 120px;
+        top: 135px;
+    }
+    .time{
+        font-size: 100px;
+        font-family: 'Intro', sans-serif;
+        font-weight: 800;
+        text-transform: uppercase;
+        /* Warning: no fallback */
+        
+        background: -webkit-linear-gradient(-86deg, #660610 5%, black 53%, #0A99B8 91%);
+        -webkit-background-clip: text;
+        -webkit-text-stroke: 8px transparent;
+        color: white;
+        position: absolute;
+        left: 320px;
+        top: 200px;
+    }
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    @keyframes zoomout {
+        0% {
+            transform: scale(1.0);
+        }
+        100% {
+            transform: scale(1.2);
+        }
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+</style>
+</head>
+<body>
+    <div class="main">
+        <div id="dragon" class="dragon"></div>
+        <div class="khung"></div>
+        <div id="time" class="time"></div>
+        <p id="id" class="statustxt" style="position: absolute; opacity : 1; left: 180px;top: 130px; font-size: 17px"></p>
+        <div id="taitxt" class="tai"></div>
+        <div id="xiutxt" class="xiu"></div>
+        <p id="sumxiu" class="usertxt" style="position: absolute; left: 115px;top: 242px;"></p>
+        <p id="sumtai" class="usertxt" style="position: absolute; right: 130px;top: 242px;"></p>
+        <div id="dice1" class="dice dice1"></div>
+        <div id="dice2" class="dice dice2"></div>
+        <div id="dice3" class="dice dice3"></div>
+        <div class="user"></div>
+        <div class="user" style="left: 80px;"></div>
+        <input id="pullxiu" class="input" type="number">
+        <input id="pulltai" class="input" type="number" style="left: 525px;">
+        <img src="" id="roll" style="position: absolute; left:300px; top: 190px; transition: 0.5s;opacity: 0; width: 180px"/>
+        <p id="userxiu" class="usertxt" style="position: absolute; left: 115px;top: 352px;"></p>
+        <p id="usertai" class="usertxt" style="position: absolute; right: 180px;top: 352px;"></p>
+        <div class="txt">
+            <p id="statustxt" class="statustxt"></p>
+        </div>
+        
+            
+    </div>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+
+<script>
+
+d1 = document.getElementById("dice1");
+d2 = document.getElementById("dice2");
+d3 = document.getElementById("dice3");
+idGame = document.getElementById("id");
+soNguoiChonTai = document.getElementById("usertai");
+soNguoiChonXiu = document.getElementById("userxiu");
+tongTienDatTai = document.getElementById("sumtai");
+tongTienDatXiu = document.getElementById("sumxiu");
+time = document.getElementById("time");
+
+gameStart = function(){
+    time.style.opacity = 1;
+    d1.style.opacity = 0;
+    d2.style.opacity = 0;
+    d3.style.opacity = 0;
+    document.getElementById('dragon').style.webkitAnimationPlayState = 'running'; 
+    document.getElementById("taitxt").style.webkitAnimationPlayState = 'paused';
+    document.getElementById("xiutxt").style.webkitAnimationPlayState = 'paused'; 
+}
+gameOver = function(dice){
+    time.style.opacity = 0;
+    roll = document.getElementById("roll");
+    document.getElementById('dragon').style.webkitAnimationPlayState = 'paused'; 
+    roll.src = "";
+    roll.src = 'imgs/roll1.gif';
+    roll.style.opacity = 1;
+    setTimeout(()=>{
+        roll.style.opacity = 0;
+        showDice(dice.dice1,dice.dice2,dice.dice3);
+        document.getElementById(dice.result+"txt").style.webkitAnimationPlayState = 'running'; 
+    },2000);
+}
+
+showDice = function(dice1,dice2,dice3){
+    dice = {
+        1: '0 -2px',
+        2: '-103px -3px',
+        3: '-204px -3px',
+        4: '-305px -3px',
+        5: '-404px -3px',
+        6: '-507px -2px',
+    };
+    d1.style.background = "url('imgs/dice.png') no-repeat "+ dice[dice1];
+    d2.style.background = "url('imgs/dice.png') no-repeat "+ dice[dice2];
+    d3.style.background = "url('imgs/dice.png') no-repeat "+ dice[dice3];
+    d1.style.opacity = 1;
+    d2.style.opacity = 1;
+    d3.style.opacity = 1;
+
+}
+
+showStt = function(msg,timeout = 3000){
+    statustxt = document.getElementById('statustxt');
+    statustxt.innerHTML = msg;
+    statustxt.style.opacity = 1;
+    setTimeout(()=>{
+        statustxt.style.opacity = 0;
+    },3000);
+}
+
+gameStart();
+
+var socket = io();
+
+socket.on('gameData', function (data) {
+    idGame.innerHTML         = '#' + data.idGame;
+    soNguoiChonTai.innerHTML = data.soNguoiChonTai;
+    soNguoiChonXiu.innerHTML = data.soNguoiChonXiu;
+    tongTienDatTai.innerHTML = data.tongTienDatTai/1000 +'k';
+    tongTienDatXiu.innerHTML = data.tongTienDatXiu/1000 +'k';
+    if(data.time.toString().length == 1){
+        time.innerHTML  = data.time == 0 ? '' : '0' + data.time;
+    }else{
+        time.innerHTML  = data.time;
+    }
+});
+
+socket.on('gameOver', function (data) {
+    gameOver(data);
+});
+
+socket.on('gameStart', function (data) {
+    gameStart();
+    showStt('Game bắt đầu');
+});
+
+socket.on('pull', function (data) {
+    if(data.status == 'success'){
+        showStt('Đặt cược thành công');
+    }else if(data.status == 'error'){
+        showStt(data.error);
+    }
+    
+});
+socket.on('winGame', function (data) {
+    showStt(data.msg,10000);
+});
+
+document.getElementById('pulltai').addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        socket.emit('pull',{
+            id : socket.id,
+            dice: 'tai',
+            money: Number(document.getElementById('pulltai').value)
+        })
+        document.getElementById('pulltai').value = '';
+    }
+});
+
+
+document.getElementById('pullxiu').addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        socket.emit('pull',{
+            id : socket.id,
+            dice: 'xiu',
+            money: Number(document.getElementById('pullxiu').value)
+        })
+        document.getElementById('pullxiu').value = '';
+    }
+});
+
+</script>
+</html>
