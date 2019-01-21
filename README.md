@@ -31,5 +31,6 @@ TẢI XUỐNG: https://github.com/nhockm4v/taixiu
 DEMO ONLINE: https://taixiu.herokuapp.com/
 
 HÌNH ẢNH DEMO:
-[img]https://i.imgur.com/3WtlX1l.png[/img]
-[img]https://i.imgur.com/XJXS1il.png[/img]
+![alt text](https://i.imgur.com/3WtlX1l.png)
+![alt text](https://i.imgur.com/XJXS1il.png)
+
