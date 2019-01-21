@@ -18,15 +18,15 @@ THÔNG TIN CHUNG:
 
 CHÚ THÍCH:
 
-- Đây là code để học hỏi nên mình chưa code phần login, cân kèo, bạn nào muốn phát triển thì code thêm nhé, code chủ yếu là tập trung vào tính năng server game tài xỉu nên mình code client bằng html cho các bạn dễ đọc, chứ nếu muốn code 1 project client như các web hiện tại thì nên dùng cocos2d ([url=https://cocos2d-x.org]Link trang chủ[/url]), code 1 lần có thể build ra cho web, window, android, ios, linux, macOS sử dụng, có các công cụ hỗ trợ việc tạo game đơn giản, code bằng JS nên đỡ nhầm lẫn code giữa lúc code client và server.
+- Đây là code để học hỏi nên mình chưa code phần login, cân kèo, bạn nào muốn phát triển thì code thêm nhé, code chủ yếu là tập trung vào tính năng server game tài xỉu nên mình code client bằng html cho các bạn dễ đọc, chứ nếu muốn code 1 project client như các web hiện tại thì nên dùng cocos2d ([Link trang chủ](https://cocos2d-x.org)), code 1 lần có thể build ra cho web, window, android, ios, linux, macOS sử dụng, có các công cụ hỗ trợ việc tạo game đơn giản, code bằng JS nên đỡ nhầm lẫn code giữa lúc code client và server.
 
 - Mình chưa code phần login nên các bạn mở mỗi tab sẽ tính như là 1 user nhé.
 
 - Như đã nói ở trên thì code này mục đích chính là học hỏi, nên bạn nào lấy đi phát triển thương mại hay gì bị túm thì mình không chịu trách nhiệm nhé.
 
-- Ai copy code xin ghi nguồn: [url=https://www.facebook.com/nhockm4v]Nhockm4v[/url].
+- Ai copy code xin ghi nguồn: [Nhockm4v](https://www.facebook.com/nhockm4v)
 
-TẢI XUỐNG: https://github.com/nhockm4v/taixiu
+
 
 DEMO ONLINE: https://taixiu.herokuapp.com/
 
